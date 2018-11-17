@@ -1,27 +1,19 @@
 
 <template>
   <div id="app">
-  {{mas}}
-  <users></users>
+  <ul>
+    <li><router-link to="/">/</router-link></li>
+    <li><router-link to="/hellow">hellow</router-link></li>
+  </ul>
+  <router-view></router-view>
+
   </div>
 </template>
 
 <script>
-// 局部注册组件
-import User from './components/User'
-//  import User from "./components/User"
 
 export default {
   name: 'app',
-  data(){
-    return {
-      mas:"12321131"
-    }
-  },
-  comments:{
-     "users":User 
-    }
-
 }
 </script>
 

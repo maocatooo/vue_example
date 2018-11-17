@@ -1,17 +1,26 @@
 <template>
+  
+  
   <div class="hello">
   {{msg}}
   </div>
+
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: []
     }
-  }
+  },
+  created() {
+    this.$http.get("http://jsonplaceholder.typicode.com/users").then((data)=>{
+      console.log(data)
+      this.msg=data.body
+    })  
+  },
 }
 </script>
 

@@ -1,9 +1,12 @@
 // 模板
 <template>
     <div class="user">
+    1aaa{{mas}} 
         <ul>
             <li v-for="user in users">
-                {{user}}
+            
+                <p @click="user.show=!user.show">{{user.name}}</p>
+                <p v-show="user.show">{{user.age}}</p>
             </li>
         </ul>
     </div>
@@ -14,9 +17,14 @@
 <script>
 export default {
     name:"user",
+    props:["mas"],
     data(){
         return {
-            users:["123","111","132"]
+            users:[
+                {name:"123",age:1,show:true},
+                {name:"123",age:1,show:true},
+                {name:"123",age:1,show:true}
+                ]
             }
     }
 }
