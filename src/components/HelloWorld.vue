@@ -30,10 +30,10 @@ export default {
       optionValue:null,
       optionValues:[
         {text:"222",
-        value:222}
+        value:2212}
       ,
       {text:"333",
-        value:333}],
+        value:3323}],
       msg: [],
       myVlaue:"",
       myVlaues:[],

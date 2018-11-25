@@ -3,7 +3,7 @@
   <div id="bash">
   {{mas}}
   <heads></heads>
-  <users v-bind:mas="mas"></users>
+  <users v-bind:mas="mas" :users="users"></users>
   <footers></footers>
   </div>
 </template>
@@ -19,7 +19,12 @@ export default {
   name: 'bash',
   data(){
     return {
-      mas:"12321131"
+      mas:"12321131",
+      users:[
+                {name:"123",age:1,show:true},
+                {name:"123",age:1,show:true},
+                {name:"123",age:1,show:true}
+                ]
     }
   },
   components:{

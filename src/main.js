@@ -4,6 +4,7 @@ import Vue from 'vue'
 import VueRouter from  "vue-router"
 import VueResource from "vue-resource"
 import App from './App'
+import Computed_demo from "./components/Computed_demo"
 import HelloWorld from "./components/HelloWorld"
 import Base from "./components/Base"
 Vue.config.productionTip = false
@@ -16,7 +17,7 @@ let router = new VueRouter({
   routes:[
     {path : "/" , component:Base},
     {path : "/hellow" , component:HelloWorld},
-
+    {path : "/c" , component:Computed_demo},
   ],
   mode:"history"
 })
