@@ -10,6 +10,7 @@
         <p slot="p_lable"> 123我是插槽123</p>
         <span slot="span_lable"> 312我是插槽321</span>
     </cc>
+    {{bb()}}
 </div>
 </template>
 
@@ -42,7 +43,11 @@ export default{
             // 接受子组件传递的值D
             console.log("im father zujian")
             console.log(d)
+        },
+        bb(){
+            console.log(`我是动态路由：${this.$route.params.ccc}`)
         }
+
     }
 }
     

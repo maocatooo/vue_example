@@ -10,7 +10,7 @@
   <input v-model="myVlaues_box" type="checkbox" value="2">
   <input v-model="myVlaues_box" type="checkbox" value="3">
   {{myVlaues_box}}
-  <input v-model="myVlaues_radio" type="radio" value="21">
+  <input v-model="myVlaues_radio" type="radio" value="211">
   <input v-model="myVlaues_radio" type="radio" value="22">
   <input v-model="myVlaues_radio" type="radio" value="23">
   {{myVlaues_radio}}
@@ -38,14 +38,20 @@ export default {
       myVlaue:"",
       myVlaues:[],
       myVlaues_radio:null,
-      myVlaues_box:null
+      myVlaues_box:[]
     }
   },
   created() {
-    this.$http.get("http://jsonplaceholder.typicode.com/users").then((data)=>{
-      console.log(data)
-      // this.msg=data.body
-    })  
+    // this.$http.get("http://jsonplaceholder.typicode.com/users").then((data)=>{
+    //   // console.log(data)
+    //   this.msg=data.body
+    // })
+    const myFirstPromise = new Promise((resolve, reject) => {
+      this.$http.get("http://jsonplaceholder.typicod123e.com/users").then((data)=>{
+      // console.log(data)
+      this.msg=data.body
+    })
+    })
   },
 }
 </script>

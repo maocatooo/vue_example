@@ -7,17 +7,21 @@ import App from './App'
 import Computed_demo from "./components/Computed_demo"
 import HelloWorld from "./components/HelloWorld"
 import Base from "./components/Base"
+import Vuex from 'vuex'
+import store from './store/user'
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(VueResource)
+
 // 注册全局组件
 // Vue.component("users", User)
 
 let router = new VueRouter({
   routes:[
-    {path : "/" , component:Base},
+    {path : "/" ,name:'base', component:Base},
     {path : "/hellow" , component:HelloWorld},
     {path : "/c" , component:Computed_demo},
+    {path : "/:ccc" , component:Computed_demo},
   ],
   mode:"history"
 })
@@ -28,6 +32,7 @@ new Vue({
   router,
   el: '#app',
   components: { App },
- 
-  template: '<App/>'
+  
+  template: '<App/>',
+  store
 })

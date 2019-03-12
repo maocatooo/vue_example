@@ -1,10 +1,11 @@
 // 模板
 <template>
-    <div class="userss">
+    <div class="users">
         <ul >
-            <li v-for="user in users" :key="m">
-                <p @click="user.show=!user.show">{{user.name}}</p>
-                <p v-show="user.show">{{user.age}}</p>
+            <li v-for="(user,index) in users" :key="index">
+                <p @click="user.show=!user.show">{{user.name}}---{{index}}</p>
+                <p v-show="user.show">{{user.age}}{{ message }}1</p>
+                
             </li>
         </ul>
     </div>
@@ -14,14 +15,14 @@
 // 行为
 <script>
 export default {
-    name:"userss",
+    name:"users",
     props:{
         users:Array
     },
     data(){
         return {
-            m:1
-            }
+            message:"啊啊啊"
+        }
     }
 }
 
