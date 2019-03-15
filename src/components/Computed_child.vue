@@ -2,8 +2,8 @@
 <div>
     <input type="text" v-model="message">
 
-
-   <button v-on:click="send_message2father">点点点</button>
+    {{count}}
+   <button v-on:click="send_message2father" @click="increment1">点点点</button>
    <!-- 接受父组件传递的插槽 slot -->
     <!-- <slot></slot> -->
    <slot name="span_lable"></slot>
@@ -15,7 +15,8 @@
 </template>
 
 <script>
-
+import {mapState} from 'vuex'
+import {mapMutations} from 'vuex'
 export default{
     data(){
         return{
@@ -23,11 +24,18 @@ export default{
     }
     },
     computed:{
+        ...mapState(['count']),
+        
         newmessage:function(){
             return this.message+"123"
     }
     },
     methods:{
+        ...mapMutations(['increment']),
+        increment1(){
+            // this.$store.commit('increment')
+            this.increment()
+        },
         aa(){
             console.log(123)
         },

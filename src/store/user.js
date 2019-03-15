@@ -10,5 +10,11 @@ const store = new Vuex.Store({
         state.count++
       }
     }
+    ,
+    actions:{
+      increment(){
+        console.log(arguments)
+      }
+    }
   })
 export default store
