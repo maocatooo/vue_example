@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue-2.4.0.js"></script>
+  <style>
+    [v-cloak] {
+      /*解决插值表达式闪烁问题*/
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <p v-cloak>{{msg}}</p>
+  <p v-text="text"></p>
+  <p v-html="html"></p>
+  <!--v-bind 可以写合法的表达式 缩写 :-->
+  <p v-bind:title="html" v-bind:aa1="text+'123'" v-html="html"></p>
+  <p>{{val}}</p>
+  <!-- v-on 事件绑定 缩写 @-->
+  <button type="button" @click="addVal">{{val}}</button>
+  <button type="button" @click="clean">{{val}}</button>
+</div>
+<script>
+  new Vue({
+      el: "#app",
+      data: {
+        msg: "hi vue",
+        text: 'data',
+        html: "<a href='#'>123123</a>",
+        val: 1,
+        int_id:null,
+      },
+      methods: {
+        addVal() {
+          if(this.int_id)return
+          this.int_id =setInterval(() => {
+            //此时的this对象指向的是外部的Vue对象
+            this.val += 1
+          }, 1000)
+
+        },
+        clean() {
+            clearInterval(this.int_id)
+            this.int_id = null
+        }
+      }
+    }
+  )
+</script>
+</body>
+</html>
