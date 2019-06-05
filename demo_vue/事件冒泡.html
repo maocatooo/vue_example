@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+  <!-- stop 阻止默认事件-->
+  <div style="height: 100px;width: 100px;background-color: #add;" @click="div">
+    <button @click.stop="btn">123</button>
+  </div>
+  <!-- prevent 阻止默认事件-->
+  <a href="http://www.baidu.com" @click.prevent="">123213</a>
+  <!-- capture 捕获事件-->
+  <div style="height: 100px;width: 100px;background-color: #add;" @click.capture="div">
+    <button @click="btn">123</button>
+  </div>
+
+</div>
+<script>
+  new Vue({
+      el: "#app",
+      data: {
+      },
+      methods: {
+        div() {
+          console.log('div')
+        },
+        btn() {
+          console.log('btn')
+        }
+      }
+    }
+  )
+</script>
+</body>
+</html>
