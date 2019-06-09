@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <script src="vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-focus>
+</div>
+<script>
+  // 自定义指令， 使用时要加v- 如v-focus
+  Vue.directive('focus', {
+    bind:function (el) {
+      // focus 绑定到元素上的时候执行，只执行一次
+      el.style['color'] = 'red'
+      console.log(arguments)
+
+    },
+    inserted:function (el) {
+      // 元素被插入到dom中 的时候执行 只执行一次
+      // el.style['color'] = 'red'
+      console.log(arguments)
+    },
+    update:function (el) {
+      console.log(arguments)
+    }
+  })
+  new Vue({
+      el: "#app",
+      data: {
+        msg:0
+      },
+      methods:{
+        add (){
+          this.msg += 1
+        }
+      }
+    }
+  )
+</script>
+
+</body>
+</html>

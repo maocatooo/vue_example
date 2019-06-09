@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <script src="vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+  <input type="text" @keyup.as.tab="add">
+  {{msg}}
+</div>
+<script>
+  // 自定义键盘修饰符
+  Vue.config.keyCodes.as = 18;
+  Vue.config.keyCodes.tab = 9
+  new Vue({
+      el: "#app",
+      data: {
+        msg:0
+      },
+      methods:{
+        add (){
+          this.msg += 1
+        }
+      }
+    }
+  )
+</script>
+
+</body>
+</html>
