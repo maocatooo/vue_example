@@ -4,7 +4,8 @@
   <ul>
     <li><router-link to="/">/</router-link></li>
     <li><router-link to="/hellow">hellow</router-link></li>
-        <li><router-link to="/c">c</router-link></li>
+      <li><router-link to="/c">c</router-link></li>
+      <li><router-link to="/vuex">vuex</router-link></li>
 
   </ul>
   <router-view></router-view>

@@ -47,10 +47,7 @@ export default {
     //   this.msg=data.body
     // })
     const myFirstPromise = new Promise((resolve, reject) => {
-      this.$http.get("http://jsonplaceholder.typicod123e.com/users").then((data)=>{
-      // console.log(data)
-      this.msg=data.body
-    })
+      
     })
   },
 }
