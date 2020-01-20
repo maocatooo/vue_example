@@ -1,6 +1,6 @@
 <template>
-  
-  
+
+
   <div class="hello">
   {{msg}}
   <input v-model="myVlaue" type="text">
@@ -37,7 +37,7 @@ export default {
       msg: [],
       myVlaue:"",
       myVlaues:[],
-      myVlaues_radio:null,
+      myVlaues_radio:[],
       myVlaues_box:[]
     }
   },
@@ -47,7 +47,7 @@ export default {
     //   this.msg=data.body
     // })
     const myFirstPromise = new Promise((resolve, reject) => {
-      
+
     })
   },
 }

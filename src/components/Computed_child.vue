@@ -6,7 +6,7 @@
    <button v-on:click="send_message2father" @click="increment1">点点点</button>
    <!-- 接受父组件传递的插槽 slot -->
     <!-- <slot></slot> -->
-   <slot name="span_lable"></slot>
+   <slot name="span_lable">11</slot>
    <slot name="p_lable"></slot>
 
 
@@ -26,7 +26,7 @@ export default{
     },
     computed:{
         ...mapState(['count']),
-        
+
         newmessage:function(){
             return this.message+"123"
     }
@@ -45,7 +45,7 @@ export default{
         }
     }
 }
-    
+
 
 </script>
 
